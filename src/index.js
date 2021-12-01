@@ -8,7 +8,7 @@ const borderTable = {
 
 function FilterableProductTable() {
 
-  const [data, setData] = useState([]);
+  const [wines, setData] = useState([]);
   // useEffect est similaire à "componentDidMount" et "componentDidUpdate"
   useEffect(() => {
     fetch('https://cruth.phpnet.org/epfc/caviste/public/index.php/api/wines')
@@ -17,14 +17,15 @@ function FilterableProductTable() {
         (result) => {
           setData(result);
         }
-
       )
   }, [])
-  console.log(data);
-  return <h1 style={borderTable}>{data.map(item => (
-    <p key={item.id}>{item.region} {item.name} {item.price} {item.country}</p>
-  ))}</h1>
+  console.log(wines);
+    return <div>{JSON.stringify(wines)}</div>
+  
+  //  <h1 style={borderTable}>{data.map(item => (
+  //   <p key={item.id}>{item.region} {item.name} {item.price} {item.country}</p>
+  // ))}</h1>
 }
 
 //export default FilterableProductTable;
-ReactDOM.render(<FilterableProductTable />, document.getElementById('root'));
+ReactDOM.render(<FilterableProductTable/>, document.getElementById('root'));
