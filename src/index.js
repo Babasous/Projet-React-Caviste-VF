@@ -6,6 +6,20 @@ const borderTable = {
   border: '2px solid red'
 }
 
+function WineTable({wines}){
+  return <table className="table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prix</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+}
+
 function FilterableProductTable() {
 
   const [wines, setData] = useState([]);
@@ -20,7 +34,8 @@ function FilterableProductTable() {
       )
   }, [])
   console.log(wines);
-    return <div>{JSON.stringify(wines)}</div>
+    return <WineTable wines={wines}/>
+      {/* <div>{JSON.stringify(wines)}</div> */}
   
   //  <h1 style={borderTable}>{data.map(item => (
   //   <p key={item.id}>{item.region} {item.name} {item.price} {item.country}</p>
