@@ -99,10 +99,8 @@ function FilterableProductTable() {
         wines={wines}
         // filterText={this.state.filterText}
         // selectCountry={this.state.selectCountry}
-      />
-      
+      />      
     </div>
-      {/* <div>{JSON.stringify(wines)}</div> */}
 }
 
 class Affichage extends React.Component{
